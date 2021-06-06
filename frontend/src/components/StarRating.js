@@ -1,6 +1,4 @@
 import React from "react";
-// import { Card } from "react-bootstrap";
-import PropTypes from "prop-types";
 
 const showStars = (ratingValue, value) => {
     if (ratingValue >= value) {
@@ -15,7 +13,7 @@ const StarRating = ({ value, text, color }) => {
     const rating = [];
     for (let i = 1; i < 6; i++) {
         rating.push(
-            <span>
+            <span key={`${i}-${value}`}>
                 <i
                     style={{
                         color: color,
@@ -38,12 +36,6 @@ const StarRating = ({ value, text, color }) => {
 
 StarRating.defaultProps = {
     color: "#f8e825",
-};
-
-StarRating.propTypes = {
-    value: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
-    color: PropTypes.string,
 };
 
 export default StarRating;
