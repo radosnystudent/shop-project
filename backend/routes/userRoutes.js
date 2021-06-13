@@ -4,13 +4,16 @@ import {
     authUser,
     getUserProfile,
     registerUser,
-} from "../controlers/userControler.js";
+    updateUserProfile,
+} from "../controllers/userController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
 const Router = express.Router();
 
 Router.route("/").post(registerUser);
 Router.post("/login", authUser);
-Router.route("/profile").get(protect, getUserProfile);
+Router.route("/profile")
+    .get(protect, getUserProfile)
+    .put(protect, updateUserProfile);
 
 export default Router;
