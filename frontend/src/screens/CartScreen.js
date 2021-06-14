@@ -101,6 +101,7 @@ const CartScreen = ({ match, location, history }) => {
                                         <Col md={2}>
                                             <Button
                                                 type="button"
+                                                className="rounded"
                                                 variant="dark"
                                                 onClick={() =>
                                                     removeFromCartHandler(
@@ -142,7 +143,7 @@ const CartScreen = ({ match, location, history }) => {
                         <ListGroup.Item>
                             <Button
                                 type="button"
-                                className="btn-block"
+                                className="btn-block rounded"
                                 disabled={cartItems.length === 0}
                                 onClick={checkoutHandler}
                             >

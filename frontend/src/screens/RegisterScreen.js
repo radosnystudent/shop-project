@@ -25,7 +25,7 @@ const RegisterScreen = ({ location, history }) => {
         if (userInfo) {
             history.push(redirect);
         }
-    }, [history, userInfo]);
+    }, [history, userInfo, redirect]);
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -84,7 +84,7 @@ const RegisterScreen = ({ location, history }) => {
                     ></Form.Control>
                 </Form.Group>
 
-                <Button type="submit" variant="primary">
+                <Button type="submit" variant="primary" className="rounded">
                     Register
                 </Button>
             </Form>
