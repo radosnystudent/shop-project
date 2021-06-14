@@ -53,10 +53,12 @@ export const login = (email, password) => async (dispatch) => {
 
 export const logout = () => (dispatch) => {
     localStorage.removeItem("userInfo");
+    localStorage.removeItem("cartItems");
+    localStorage.removeItem("shippingAddress");
     dispatch({
         type: USER_LOGOUT,
     });
-    window.location.reload();
+    // window.location.reload();
 };
 
 export const register = (name, email, password) => async (dispatch) => {
